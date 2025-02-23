@@ -1,0 +1,2 @@
+name = 'tou'
+print(name)
