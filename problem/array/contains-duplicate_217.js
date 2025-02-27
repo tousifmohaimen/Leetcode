@@ -17,11 +17,25 @@
 //time complexity: O(n log n) if we consider the sort function
 //space complexity: O(1)
 
+// var containsDuplicate = function(nums) {
+//     nums.sort((a,b) => a - b);
+//     for(let i = 0;i < nums.length - 1;i++){
+//         if(nums[i] === nums[i + 1])
+//             return true;
+//     }
+//     return false
+// }
+
+//best optimized solution using set
+//time complexity: O(n)
+//space complexity: O(n)
+
 var containsDuplicate = function(nums) {
-    nums.sort((a,b) => a - b);
-    for(let i = 0;i < nums.length - 1;i++){
-        if(nums[i] === nums[i + 1])
+    let mySet = new Set();
+    for(let i = 0;i < nums.length;i++){
+        if(mySet.has(nums[i]))
             return true;
+        mySet.add(nums[i]);
     }
-    return false
+    return false;
 }
