@@ -23,5 +23,6 @@ var twoSum = function(nums, target) {
             return [map.get(temp),i]
         }
         map.set(nums[i],i);
+        
     }
 }
